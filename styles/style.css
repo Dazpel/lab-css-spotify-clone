@@ -6,3 +6,160 @@ Green: #00B172
 White: #FFF
 
 */
+
+.sec1 {
+    height: 500px;
+    overflow: hidden;
+}
+
+.sec2 {
+    height: 250px;
+    padding: 30px;
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    
+}
+
+.sec3 {
+    color: white;
+    background-color: #00B172;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 1fr min-content 1fr;
+}
+
+.navbar {
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.navbar-logo {
+    display: grid;
+    align-items: center;
+}
+
+.navbar-options h5 {
+    font-weight: 100;
+}
+
+.navbar-options nav {
+    color: black;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar-logo img {
+    width: 100px;
+}
+
+.landingPage {
+    text-align: center;
+    color: white;
+    height: 500px;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/landing.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+.landingPage-text {
+    width: 450px;
+    letter-spacing: 0.5px;
+}
+
+.landingPage p {
+    font-size: 14px;
+}
+
+.landingPage h1 {
+    font-size: 42px;
+    letter-spacing: 0.5px;
+}
+
+.sec2 img {
+    width: 60px;
+    height: 40px;
+}
+
+.sec2 h2 {
+    margin: 0;
+}
+
+.sec2 h5 {
+    color: #00B172;
+}
+
+.servicesTitle {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.servicesOptions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.servicesOptions-card {
+    padding: 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.servicesOptions-card p {
+    color: #666464;
+    font-size: 13px;
+}
+
+.kanyeLogo {
+    height: 500px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.kanyeLogo img {
+    width: 100px;
+}
+
+.kanyeRight img{
+    width: 230px;
+}
+
+.kanyeRight {
+   display: grid;
+   justify-content: center;
+    align-items: center;
+    
+}
+
+.kanyeRight-app{
+    padding: 5px;
+}
+
+.kanyeLeft{
+    padding: 20px 0px 20px 20px;
+}
+
+.kanyeCards {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
+
+.kanyeLeft-card {
+    width: 75%;
+}
+
