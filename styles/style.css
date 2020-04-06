@@ -7,70 +7,202 @@ White: #FFF
 
 */
 
+body {
+    margin: 5px 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
 .sec1 {
-    height: 500px;
+    height: 98vh;
     overflow: hidden;
 }
 
 .sec2 {
-    height: 250px;
+    height: 400px;
     padding: 30px;
     display: grid;
     grid-template-rows: 50px 1fr;
-    
+
 }
 
 .sec3 {
+    position: absolute;
     color: white;
-    background-color: #00B172;
+    background-image: url("../images/kanyeW.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     height: 500px;
     display: grid;
     grid-template-columns: 1fr min-content 1fr;
 }
 
-.navbar {
 
+
+
+.navbar {
+    height: 80px;
     display: grid;
     grid-template-columns: 50% 50%;
+    align-items: center;
+    padding: 0px 15px;
 }
 
-.navbar-logo {
-    display: grid;
-    align-items: center;
-}
+
 
 .navbar-options h5 {
+    margin: 0 15px;
     font-weight: 100;
+    font-size: 21px;
+    cursor: pointer;
 }
+
+.navbar-options h5:hover {
+    border-bottom: 2px solid #00B172;
+}
+
 
 .navbar-options nav {
     color: black;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
 }
 
 .navbar-logo img {
-    width: 100px;
+    width: 150px;
 }
 
 .landingPage {
     text-align: center;
     color: white;
-    height: 500px;
-    width: 100%;
+    height: 100%;
     display: grid;
     justify-content: center;
     align-items: center;
     background-image: url("../images/landing.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position-y: -150px;
 }
+
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    
+        
+    }
+
+    to {
+        opacity: 1;
+    
+
+    }
+}
+
+@keyframes beat {
+    to {
+        transform: scale(1.4);
+    }
+}
+
+@keyframes tempo {
+    from {
+     
+    transform: scale(.3);
+        
+    }
+
+    to {
+     
+    transform: scale(1);
+
+    }
+}
+
+#overlay {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 86.1vh;
+    top: 83px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    display: block;
+}
+
+/* 
+Begin VIDEO CSS
+*/
+#musicVideo {
+    display: none;
+    height: 100%;
+
+}
+
+#musicVideo-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+}
+
+#musicVideo-logo img {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    animation-name: tempo, fadein, beat;
+    animation-duration: 6000ms, 6000ms, 240ms;
+    animation-delay: 0ms, 0ms, 3150ms;
+    animation-iteration-count: 1, 1, infinite;
+    animation-direction: normal, normal, alternate;
+    
+}
+
+
+
+
+#myVideo {
+    height: 100%;
+    object-fit: none;
+    position: relative;
+    width: 100%;
+
+}
+
+.musicVideo-Text {
+    position: absolute;
+    width: 300px;
+    margin-top: 120px;
+    left: -70px;
+    color: white;
+    font-style: italic;
+    letter-spacing: 5px;
+    z-index: 3;
+}
+
+.musicVideo-Text h1 {
+    font-weight: 100;
+    opacity: 0;
+    animation-name: fadein;
+    animation-duration: 5000ms;
+    animation-delay: 4000ms;
+
+}
+
+/* 
+END VIDEO CSS
+*/
 
 
 
 .landingPage-text {
     width: 450px;
     letter-spacing: 0.5px;
+    animation: fadein 4s;
 }
 
 .landingPage p {
@@ -83,83 +215,156 @@ White: #FFF
 }
 
 .sec2 img {
-    width: 60px;
-    height: 40px;
+    width: 80px;
 }
 
 .sec2 h2 {
     margin: 0;
 }
 
+.sec2 h3 {
+    margin: 0;
+    font-size: 23px;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #00B172;
+}
+
+.servicesOptions-card p {
+    color: #666464;
+    font-size: 17px;
+}
+
 .sec2 h5 {
     color: #00B172;
+    font-size: 17px;
 }
 
 .servicesTitle {
     display: grid;
     justify-content: center;
     align-items: center;
-    
-
 }
 
 .servicesOptions {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    align-items: center;
 }
 
 .servicesOptions-card {
     padding: 20px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+    backface-visibility: hidden;
+    align-content: center;
+    justify-items: center;
+    display: grid;
+    height: 235px;
+    box-shadow: 7px 11px 14px 0px #8c8c8c;
+    cursor: pointer;
+    transition: transform cubic-bezier(0.21, -0.1, 0.28, 0.96) 1s;
 }
 
-.servicesOptions-card p {
-    color: #666464;
-    font-size: 13px;
+.servicesOptions-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 3px 23px 0px #8c8c8c;
 }
+
+
 
 .kanyeLogo {
+
     height: 500px;
     display: grid;
     justify-content: center;
     align-items: center;
 }
 
-.kanyeLogo img {
+.kanyeLogo .imageSwap {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("../images/spotify-icon-white.png");
     width: 100px;
+    height: 100px;
+    transition: all 5s;
+    margin-left: 25px;
 }
 
-.kanyeRight img{
+.sec3:hover .imageSwap
+    {
+    transform: rotate(2160deg);
+    background-image: url("../images/ironhack.svg");
+}
+
+
+.kanyeRight img {
     width: 230px;
+    box-shadow: 4px 6px 19px 4px #393939;
 }
 
 .kanyeRight {
-   display: grid;
-   justify-content: center;
+    display: grid;
+    justify-content: center;
     align-items: center;
-    
+
 }
 
-.kanyeRight-app{
+.kanyeRight-app {
     padding: 5px;
+    margin-left: 40px;
+
 }
 
-.kanyeLeft{
+.kanyeRight-app iframe {
+    box-shadow: 0 0 20px 5px black;
+    transition: transform cubic-bezier(0.21, -0.1, 0.28, 0.96) 1s;
+}
+
+iframe:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 5px #E3D62D;
+}
+
+.kanyeLeft {
     padding: 20px 0px 20px 20px;
 }
 
+.kanyeLeft-title {
+    margin-left: 54px;
+}
+
+.kanyeLeft h1 {
+    font-size: 35px;
+    color: #E3D62D;
+}
+
 .kanyeCards {
-    
+    margin-left: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    
+
 }
 
 .kanyeLeft-card {
-    width: 75%;
+    width: 58%;
 }
 
+.kanyeLeft-card h3:hover {
+    border-bottom: 3px solid #E3D62D;
+    width: min-content;
+    
+}
+
+
+.kanyeLeft-card:nth-child(1) {
+    margin-left: -15px;
+    width: 350px;
+}
+
+.kanyeLeft-card:nth-child(2) {
+    margin-left: -36px;
+}
+
+.kanyeLeft-card:nth-child(3) {
+    margin-left: -5px;
+}

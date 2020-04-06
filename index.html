@@ -5,7 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <title>Spotify Clone</title>
   <!-- don't forget to link your styles -->
 </head>
@@ -27,9 +29,22 @@
         </nav>
       </div>
     </div>
+    <div id="musicVideo">
+      <div id="musicVideo-logo">
+        <img src="./images/spotify-icon-white.png" alt="Spotify Icon White">
+        <div class="musicVideo-Text">
+          <h1>Quite Literally...</h1>
+        </div>
+      </div>
+      
+      <div id="overlay"></div>
+      <video loop id="myVideo">
 
+        <source src="./images/vtomorrows.webm" type="video/webm">
+      </video>
+    </div>
     <div class="landingPage">
-
+      
       <div class="landingPage-text">
         <h1>Music for everyone.</h1>
         <p>Spotify is now free on mobile, tablet and computer.
@@ -56,7 +71,7 @@
       <div class="servicesOptions-card">
         <img src="./images/high-quality-icon.png" alt="High Quality Icon">
         <h5>
-          HD Muusic
+          HD Music
         </h5>
         <p>Listen to music as if you were listening live</p>
       </div>
@@ -71,46 +86,70 @@
 
   </section>
 
-  <section class="sec3">
+  <section class="sec3" >
+    
     <div class="kanyeLeft">
       <div class="kanyeLeft-title">
         <h1>
           It's as yeezy as Kanye West.
         </h1>
       </div>
-     <div class="kanyeCards">
-      <div class="kanyeLeft-card">
-        <h3>
-          Search
-        </h3>
-        <p>Know what you want to listen to? Just search and hit play.</p>
+      <div class="kanyeCards">
+        <div class="kanyeLeft-card">
+          <h3>
+            Search
+          </h3>
+          <p>Know what you want to listen to? Just search and hit play.</p>
+        </div>
+        <div class="kanyeLeft-card">
+          <h3>
+            Browse
+          </h3>
+          <p>Check out the
+            latest charts, brand new releases and great playlists for right now.</p>
+        </div>
+        <div class="kanyeLeft-card">
+          <h3>
+            Discover
+          </h3>
+          <p>Enjoy new music every Monday with your
+            own personal playlist. Or sit back and enjoy Radio.</p>
+        </div>
       </div>
-      <div class="kanyeLeft-card">
-        <h3>
-          Browse
-        </h3>
-        <p>Check out the
-          latest charts, brand new releases and great playlists for right now.</p>
-      </div>
-      <div class="kanyeLeft-card">
-        <h3>
-          Discover
-        </h3>
-        <p>Enjoy new music every Monday with your
-          own personal playlist. Or sit back and enjoy Radio.</p>
-      </div>
-     </div>
     </div>
     <div class="kanyeLogo">
-      <img src="./images/spotify-icon-white.png" alt="Spotify Icon White">
+      <!-- <img src="./images/spotify-icon-white.png" alt="Spotify Icon White" loading="lazy"> -->
+      <div class="imageSwap">
+
+      </div>
+
     </div>
     <div class="kanyeRight">
       <div class="kanyeRight-app">
-        <img src="./images/spotify-app.jpg" alt="Spotify App">
+        <!-- <img src="./images/spotify-app.jpg" alt="Spotify App"> -->
+        <iframe src="https://open.spotify.com/embed/album/0FgZKfoU2Br5sHOfvZKTI9" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
       </div>
     </div>
   </section>
 
 </body>
+<script>
+ $(document).ready(function(){
+    $(".landingPage").hover(function(){
+      $('video').trigger('play');
+      $('.landingPage').css("display", "none");
+      $('#musicVideo').css("display", "block"); 
+              
+    });
+
+    $(".sec2").hover(function(){
+      $('video').trigger('pause');
+      $('#musicVideo').css("display", "none");        
+      $('.landingPage').css("display", "grid");
+    });
+
+    
+});
+</script>
 
 </html>
