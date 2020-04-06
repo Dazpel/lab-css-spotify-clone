@@ -172,10 +172,10 @@ Begin VIDEO CSS
 
 }
 
-@media screen and (min-width: 16500px) {
+@media screen and (min-width: 2000px) {
     #myVideo {
-        object-fit:contain;
-        width: auto;
+        object-fit:unset;
+        width: 100%;
     
     }
   }
