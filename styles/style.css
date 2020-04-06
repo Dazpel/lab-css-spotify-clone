@@ -26,7 +26,6 @@ body {
 }
 
 .sec3 {
-    position: absolute;
     color: white;
     background-image: url("../images/kanyeW.png");
     background-repeat: no-repeat;
@@ -109,13 +108,13 @@ body {
 @keyframes tempo {
     from {
      
-    transform: scale(.3);
+    transform: scale(.4);
         
     }
 
     to {
      
-    transform: scale(1);
+    transform: scale(1.4);
 
     }
 }
@@ -167,11 +166,29 @@ Begin VIDEO CSS
 
 #myVideo {
     height: 100%;
-    object-fit: none;
+  
     position: relative;
-    width: 100%;
+    
 
 }
+
+@media screen and (min-width: 16500px) {
+    #myVideo {
+        object-fit:contain;
+        width: auto;
+    
+    }
+  }
+
+  @media screen and (max-width: 1600px) {
+    #myVideo {
+        object-fit:none;
+        width: 100%;
+    
+    }
+  }
+
+
 
 .musicVideo-Text {
     position: absolute;
@@ -350,6 +367,7 @@ iframe:hover {
 }
 
 .kanyeLeft-card h3:hover {
+    cursor: pointer;
     border-bottom: 3px solid #E3D62D;
     width: min-content;
     
